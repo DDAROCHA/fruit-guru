@@ -32,7 +32,7 @@ export function Home() {
       }, 2000);
     } catch (err) {
       console.error("Error running flow:", err.message);
-      setAnswer("There was an error getting the response.");
+      setAnswer("There was an error getting the response");
       setLoading(false);
     }
   };

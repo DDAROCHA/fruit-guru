@@ -16,7 +16,7 @@ function App() {
         <div className="header-center">
           <img src={logo} alt="Logo" className="header-logo" />
           <div className="header-title-wrapper">
-            <h1 className="header-title">FRUIT GURU</h1>
+            <h1 className="header-title">AI FRUIT GURU</h1>
             <a 
               href="https://www.linkedin.com/in/diego-da-rocha" 
               target="_blank" 
