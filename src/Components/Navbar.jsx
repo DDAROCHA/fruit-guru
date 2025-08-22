@@ -22,12 +22,7 @@ export function Navbar() {
         <ul className={`menu ${isOpen ? "open" : ""}`}>
           <li>
             <NavLink to="/" className="menu-link">
-              Set Shift
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/Page1" className="menu-link">
-              Review and Send
+              Home
             </NavLink>
           </li>
           <li>

@@ -1,11 +1,11 @@
 import { useState } from "react";
 import "./Input.css";
 
-export const Input = ({ onSubmit, buttonLabel = "Submit" }) => {
+export const Input = ({ onSubmit }) => {
   const [input, setInput] = useState("");
 
   const handleSubmit = () => {
-    if (!input) return;
+    if (!input.trim()) return;
     onSubmit(input);
     setInput("");
   };
@@ -17,10 +17,10 @@ export const Input = ({ onSubmit, buttonLabel = "Submit" }) => {
         type="text"
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        placeholder="Enter employee name..."
+        placeholder="Enter question here..."
       />
       <button onClick={handleSubmit} className="menu-link">
-        {buttonLabel}
+        Ask
       </button>
     </div>
   );

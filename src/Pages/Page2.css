@@ -1,6 +1,6 @@
 .page2-container {
-  background-color: #282c34;
-  color: white;
+  background-color: #a2fa9fff;
+  color: black;
   min-height: 100vh;
   padding: 20px;
   box-sizing: border-box;
@@ -20,7 +20,7 @@
 /* Recuadro igual al de Page1 */
 .page2-block {
   width: 350px;
-  border: 1px solid white;
+  border: 1px solid rgb(8, 141, 26);
   padding: 15px;
   margin-bottom: 20px;
   box-sizing: border-box;
@@ -31,7 +31,7 @@
   margin-top: 15px;
   margin-bottom: 8px;
   font-size: 1rem;
-  color: #9ecfff;
+  color: #0656a5;
 }
 
 /* Footer fijo abajo */
@@ -40,5 +40,5 @@
   bottom: 10px;
   text-align: center;
   font-size: 0.9rem;
-  color: #bbb;
+  color: #f30303;
 }

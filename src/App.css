@@ -1,6 +1,6 @@
 .App-header {
-  background-color: #282c34;
-  color: white;
+  background-color: #a2fa9fff;
+  color: rgb(8, 141, 26);
   display: flex;
   justify-content: center; /* centra horizontalmente todo el bloque */
   align-items: center;
@@ -19,7 +19,7 @@
 
 /* Logo */
 .header-logo {
-  height: 50px;
+  height: 100px;
   margin-right: 10px;
 }
 
@@ -40,7 +40,7 @@
 /* Subtítulo "By DDR" */
 .header-subtitle {
   font-size: 0.9rem;
-  color: #61dafb;
+  color: #0b91b6;
   text-decoration: none;
   margin-top: 4px;
 }
@@ -51,7 +51,7 @@
 
 /* Icono GitHub pegado al lado del título */
 .header-github {
-  color: white;
+  color: rgb(8, 141, 26);
   text-decoration: none;
   align-self: flex-start; /* alinea al inicio de la columna del título */
 }

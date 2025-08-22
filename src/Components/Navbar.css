@@ -7,7 +7,7 @@ html, body {
 
 /* Navbar: full width background with padding */
 .navbar {
-  background-color: #282c34;
+  background-color: rgb(8, 141, 26);
   padding: 1rem;
   box-sizing: border-box;   /* include padding in width calculation */
   width: 100%;              /* full container width */
@@ -36,14 +36,14 @@ html, body {
 .menu-link {
   color: white;
   text-decoration: none;
-  background: #333;
+  background: #026102;
   padding: 0.5rem 1rem;
   border-radius: 8px;
   transition: background 0.3s;
 }
 
 .menu-link:hover {
-  background: #555;
+  background: hsl(118, 80%, 34%);
 }
 
 /* Hamburger menu button (mobile) */

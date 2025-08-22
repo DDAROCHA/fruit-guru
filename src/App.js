@@ -1,6 +1,5 @@
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { Home } from './Pages/Home';
-import { Page1 } from './Pages/Page1';
 import { Page2 } from './Pages/Page2';
 import { Layout } from './Layout';
 
@@ -17,7 +16,7 @@ function App() {
         <div className="header-center">
           <img src={logo} alt="Logo" className="header-logo" />
           <div className="header-title-wrapper">
-            <h1 className="header-title">TOMORROW SHIFT</h1>
+            <h1 className="header-title">FRUIT GURU</h1>
             <a 
               href="https://www.linkedin.com/in/diego-da-rocha" 
               target="_blank" 
@@ -44,7 +43,6 @@ function App() {
           <Routes>
             <Route element={<Layout />}>
               <Route path="/" element={<Home />} />
-              <Route path="/Page1" element={<Page1 />} />
               <Route path="/Page2" element={<Page2 />} />
             </Route>
           </Routes>
