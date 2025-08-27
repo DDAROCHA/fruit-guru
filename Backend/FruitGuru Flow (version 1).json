@@ -1,0 +1,439 @@
+{
+  "flow": {
+    "id": "E5756404-4189-49F3-BDE8-7FEE19F980DA",
+    "name": "FruitGuru"
+  },
+  "flowVersion": {
+    "id": "903829F8-F12A-43E8-C768-2DFF6764861D",
+    "description": null,
+    "firstElementId": "D6084848-9BC8-521E-3D48-B8D80DD805F9",
+    "elements": [
+      {
+        "id": "D6084848-9BC8-521E-3D48-B8D80DD805F9",
+        "name": "External Callback",
+        "flowElementId": "1666B887-3CC9-24F8-630C-26B80854583C",
+        "groupId": null,
+        "type": "TRIGGER",
+        "nextElementIds": [
+          "93EC3408-A417-7DE8-6778-28A272BFE3D8"
+        ],
+        "nextGroupIds": [],
+        "clientMetadata": {
+          "position": {
+            "x": 585,
+            "y": 255
+          },
+          "elementId": "external-callback",
+          "resultAlias": "Mensaje Externo",
+          "isFirstElement": true,
+          "blockDefinitionId": "external-callback"
+        },
+        "metaInfo": {
+          "onFailElemId": null,
+          "storeResult": true,
+          "logging": {
+            "input": {
+              "logData": false,
+              "message": null
+            },
+            "output": null
+          },
+          "clientValidationState": {
+            "valid": true,
+            "errorMessage": null
+          },
+          "type": "CALLBACK",
+          "condition": null,
+          "authInfo": {
+            "type": "NONE",
+            "requiredRoles": [],
+            "onFailPolicy": "ERROR"
+          },
+          "slaConditions": []
+        },
+        "serverFields": {
+          "learningStatus": "LEARNED"
+        }
+      },
+      {
+        "id": "04B86098-1F42-5D48-198B-20087BA8DF98",
+        "name": "Send Message",
+        "flowElementId": "298899FA-BE48-BD01-E3D8-4412D4B80BA8",
+        "groupId": null,
+        "type": "ACTION",
+        "nextElementIds": [],
+        "nextGroupIds": [],
+        "clientMetadata": {
+          "notes": "Sends emails through Gmail for AI agents to automate customer communication, send notifications, deliver reports, or trigger follow-up messages. Perfect for automated support responses, marketing campaigns, or personalized outreach based on user actions.",
+          "methodId": "JS###v1###GmailService###sendMessage",
+          "position": {
+            "x": 1119.1598756701364,
+            "y": 176.98514441508
+          },
+          "elementId": "JS###v1###GmailService###sendMessage",
+          "methodName": "sendMessage",
+          "resultAlias": "Send Message Result",
+          "isFirstElement": false,
+          "blockDefinitionId": "api-service-method"
+        },
+        "metaInfo": {
+          "onFailElemId": null,
+          "storeResult": true,
+          "logging": {
+            "input": {
+              "logData": false,
+              "message": null
+            },
+            "output": {
+              "logData": false,
+              "message": null
+            }
+          },
+          "clientValidationState": {
+            "valid": true,
+            "errorMessage": null
+          },
+          "type": "BACKENDLESS",
+          "slaConditions": [],
+          "enabled": true,
+          "simulationResult": null,
+          "subtype": "API_SERVICE",
+          "userSession": null,
+          "serviceName": "GmailService",
+          "modelName": "v1",
+          "lang": "JS",
+          "methodName": "sendMessage",
+          "connectionId": "a6d52240-1748-4c9a-a9ed-91e5a6e03280",
+          "hostType": "SHARED",
+          "uriPlaceholderValues": [],
+          "uriParams": [],
+          "bodyParams": [
+            {
+              "type": "SIMPLE",
+              "name": "to",
+              "value": {
+                "mode": "EXPRESSION",
+                "expression": [
+                  {
+                    "id": "TEXT",
+                    "label": null,
+                    "value": "ddarocha00@gmail.com",
+                    "type": "INPUT"
+                  }
+                ],
+                "resultType": "STRING"
+              }
+            },
+            {
+              "type": "SIMPLE",
+              "name": "subject",
+              "value": {
+                "mode": "EXPRESSION",
+                "expression": [
+                  {
+                    "id": "TEXT",
+                    "label": null,
+                    "value": "Se uso Fruit guru",
+                    "type": "INPUT"
+                  }
+                ],
+                "resultType": "STRING"
+              }
+            },
+            {
+              "type": "SIMPLE",
+              "name": "bodyType",
+              "value": {
+                "mode": "EXPRESSION",
+                "expression": [
+                  {
+                    "id": "TEXT",
+                    "label": null,
+                    "value": "plain",
+                    "type": "INPUT"
+                  }
+                ],
+                "resultType": "STRING"
+              }
+            },
+            {
+              "type": "SIMPLE",
+              "name": "body content",
+              "value": {
+                "mode": "EXPRESSION",
+                "expression": [
+                  {
+                    "id": "RESULT",
+                    "label": "Mensaje Externo",
+                    "value": "D6084848-9BC8-521E-3D48-B8D80DD805F9",
+                    "subPath": "question",
+                    "type": "TRIGGER_DATA"
+                  },
+                  {
+                    "id": "ELEMENT_RESULT",
+                    "label": "FRUTOLOGO Result",
+                    "value": "93EC3408-A417-7DE8-6778-28A272BFE3D8",
+                    "subPath": "decision.response",
+                    "type": "ELEMENT_LINK"
+                  }
+                ],
+                "resultType": "STRING"
+              }
+            },
+            {
+              "type": "SIMPLE",
+              "name": "from",
+              "value": {
+                "mode": "EXPRESSION",
+                "expression": [],
+                "resultType": "STRING"
+              }
+            },
+            {
+              "type": "SIMPLE",
+              "name": "cc",
+              "value": {
+                "mode": "EXPRESSION",
+                "expression": [],
+                "resultType": "ARRAY"
+              }
+            },
+            {
+              "type": "SIMPLE",
+              "name": "bcc",
+              "value": {
+                "mode": "EXPRESSION",
+                "expression": [],
+                "resultType": "ARRAY"
+              }
+            },
+            {
+              "type": "SIMPLE",
+              "name": "threadId",
+              "value": {
+                "mode": "EXPRESSION",
+                "expression": [],
+                "resultType": "STRING"
+              }
+            },
+            {
+              "type": "SIMPLE",
+              "name": "attachments",
+              "value": {
+                "mode": "EXPRESSION",
+                "expression": [],
+                "resultType": "STRING"
+              }
+            }
+          ]
+        },
+        "serverFields": {
+          "learningStatus": "OFF"
+        }
+      },
+      {
+        "id": "647925D8-F1F3-BA48-DBC8-226EB4E7670E",
+        "name": "Save Record In Database",
+        "flowElementId": "6358E048-52BF-C256-4399-10580E78C6CA",
+        "groupId": null,
+        "type": "ACTION",
+        "nextElementIds": [],
+        "nextGroupIds": [],
+        "clientMetadata": {
+          "tableId": "C7621B6E-A1A5-4F8A-887F-E3DB0917AFFE",
+          "position": {
+            "x": 1082,
+            "y": 435
+          },
+          "elementId": "save-record",
+          "dataSource": null,
+          "resultAlias": "Save Record In Database Result",
+          "operationType": "create_new",
+          "isFirstElement": false,
+          "blockDefinitionId": "save-record"
+        },
+        "metaInfo": {
+          "onFailElemId": null,
+          "storeResult": true,
+          "logging": {
+            "input": {
+              "logData": false,
+              "message": null
+            },
+            "output": {
+              "logData": false,
+              "message": null
+            }
+          },
+          "clientValidationState": {
+            "valid": true,
+            "errorMessage": null
+          },
+          "type": "BACKENDLESS",
+          "slaConditions": [],
+          "enabled": true,
+          "simulationResult": null,
+          "subtype": "GENERAL",
+          "userSession": null,
+          "httpMethod": "PUT",
+          "responseType": "OBJECT",
+          "uriTemplate": "/data/Respuestas",
+          "uriParams": [],
+          "bodyParams": [
+            {
+              "type": "SIMPLE",
+              "name": "Pregunta",
+              "value": {
+                "mode": "EXPRESSION",
+                "expression": [
+                  {
+                    "id": "RESULT",
+                    "label": "Mensaje Externo",
+                    "value": "D6084848-9BC8-521E-3D48-B8D80DD805F9",
+                    "subPath": "question",
+                    "type": "TRIGGER_DATA"
+                  }
+                ],
+                "resultType": "STRING"
+              }
+            },
+            {
+              "type": "SIMPLE",
+              "name": "Codigo",
+              "value": {
+                "mode": "EXPRESSION",
+                "expression": [
+                  {
+                    "id": "RESULT",
+                    "label": "Mensaje Externo",
+                    "value": "D6084848-9BC8-521E-3D48-B8D80DD805F9",
+                    "subPath": "codigo",
+                    "type": "TRIGGER_DATA"
+                  }
+                ],
+                "resultType": "STRING"
+              }
+            },
+            {
+              "type": "SIMPLE",
+              "name": "Respuesta",
+              "value": {
+                "mode": "EXPRESSION",
+                "expression": [
+                  {
+                    "id": "ELEMENT_RESULT",
+                    "label": "FRUTOLOGO Result",
+                    "value": "93EC3408-A417-7DE8-6778-28A272BFE3D8",
+                    "subPath": "decision.response",
+                    "type": "ELEMENT_LINK"
+                  }
+                ],
+                "resultType": null
+              }
+            }
+          ],
+          "uriPlaceholderValues": []
+        },
+        "serverFields": {
+          "learningStatus": "OFF"
+        }
+      },
+      {
+        "id": "93EC3408-A417-7DE8-6778-28A272BFE3D8",
+        "name": "FRUTOLOGO",
+        "flowElementId": "C8EA174D-D668-4388-6BB8-C1994A082D47",
+        "groupId": null,
+        "type": "ACTION",
+        "nextElementIds": [
+          "647925D8-F1F3-BA48-DBC8-226EB4E7670E",
+          "04B86098-1F42-5D48-198B-20087BA8DF98"
+        ],
+        "nextGroupIds": [],
+        "clientMetadata": {
+          "position": {
+            "x": 960,
+            "y": 300
+          },
+          "elementId": "18721B4F-BA4C-4DAA-AE61-B42B7FD8A00F",
+          "resultAlias": "FRUTOLOGO Result",
+          "assistantName": "FRUTOLOGO",
+          "isFirstElement": false,
+          "blockDefinitionId": "ai-assistant"
+        },
+        "metaInfo": {
+          "onFailElemId": null,
+          "storeResult": true,
+          "logging": {
+            "input": {
+              "logData": false,
+              "message": null
+            },
+            "output": {
+              "logData": false,
+              "message": null
+            }
+          },
+          "clientValidationState": {
+            "valid": true,
+            "errorMessage": null
+          },
+          "type": "AI_ASSISTANT",
+          "slaConditions": [],
+          "enabled": true,
+          "simulationResult": null,
+          "assistantId": "18721B4F-BA4C-4DAA-AE61-B42B7FD8A00F",
+          "message": {
+            "mode": "EXPRESSION",
+            "expression": [
+              {
+                "id": "RESULT",
+                "label": "Mensaje Externo",
+                "value": "D6084848-9BC8-521E-3D48-B8D80DD805F9",
+                "subPath": null,
+                "type": "TRIGGER_DATA"
+              }
+            ],
+            "resultType": null
+          },
+          "toolsResources": [],
+          "images": {
+            "staticFiles": [],
+            "dynamicFiles": []
+          }
+        },
+        "serverFields": {
+          "learningStatus": "OFF"
+        }
+      }
+    ],
+    "groups": [],
+    "clientMetadata": {
+      "autoSave": true,
+      "viewport": {
+        "x": -234.52137204215185,
+        "y": -173.4724718351937,
+        "zoom": 0.8705505632961241
+      }
+    },
+    "metaInfo": {
+      "wasLive": true,
+      "schedule": null,
+      "errorMessage": null,
+      "sharedMemory": {
+        "anchor": {
+          "type": "FLOW_MEMORY",
+          "path": null,
+          "missingAnchorPolicy": null
+        },
+        "expirationInSec": null
+      },
+      "executionStaticData": [],
+      "initialData": null,
+      "ownerFlowVersionId": null
+    }
+  },
+  "slaGoals": [],
+  "slaCalendars": [],
+  "subFlows": [],
+  "exportDate": "2025-08-27T14:28:19.355Z"
+}
