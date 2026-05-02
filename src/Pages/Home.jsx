@@ -1,38 +1,31 @@
-import React, { useState } from "react";
-import { runFlow, getRespuestaPorCodigo } from "../services/backend";
-import { Spinner } from "../Components/Spinner/Spinner";
-import { Input } from "../Components/Input/Input";
-import "./Home.css";
+import React, { useState } from 'react';
+import { askFruitGuru } from '../services/backend';
+import { Spinner } from '../Components/Spinner/Spinner';
+import { Input } from '../Components/Input/Input';
+import DOMPurify from 'dompurify';
+import './Home.css';
 
 export function Home() {
-  const [answer, setAnswer] = useState("");
+  const [answer, setAnswer] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const handleAsk = async (question) => {
+  const handleAsk = async question => {
     if (!question.trim()) {
-      alert("Please enter a question.");
+      alert('Please enter a question.');
       return;
     }
 
-    const codigo = Date.now().toString(); // 🔹 código único
     setLoading(true);
-    setAnswer("");
+    setAnswer('');
 
     try {
-      await runFlow(question, codigo);
+      const result = await askFruitGuru(question);
 
-      // 🔹 Polling cada 2s hasta encontrar respuesta
-      const checkInterval = setInterval(async () => {
-        const registro = await getRespuestaPorCodigo(codigo);
-        if (registro) {
-          clearInterval(checkInterval);
-          setAnswer(registro.Respuesta || "No response found.");
-          setLoading(false);
-        }
-      }, 2000);
+      setAnswer(result); // 👈 ya viene HTML listo
     } catch (err) {
-      console.error("Error running flow:", err.message);
-      setAnswer("There was an error getting the response");
+      console.error('Error calling API:', err.message);
+      setAnswer('There was an error getting the response');
+    } finally {
       setLoading(false);
     }
   };
@@ -68,7 +61,9 @@ export function Home() {
         ) : (
           <div
             className="page1-line"
-            dangerouslySetInnerHTML={{ __html: answer }}
+            dangerouslySetInnerHTML={{
+              __html: DOMPurify.sanitize(answer),
+            }}
           />
         )}
       </div>
